@@ -1,5 +1,7 @@
 # Model-View-Controller-MVC-Challenge-Tech-Blog
-https://git.heroku.com/modelviewcontroller.git
+
+### Live App
+https://modelviewcontroller.herokuapp.com/
 
 ![GitHub](https://img.shields.io/github/license/CharlesCoxC3/ReadMe-Generator)
 
