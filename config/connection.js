@@ -1,10 +1,24 @@
 // sequelize connection
 
 require('dotenv').config();
+require('postgres');
 
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize (
+let sequelize;
+if (process.env.DATABASE_URL) {
+  console.log("SETTING DB USING URL", process.env.DATABASE_URL);
+  sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    }
+  }
+  );
+} else 
+sequelize = new Sequelize (
       process.env.DB_NAME, 
       process.env.DB_USER, 
       process.env.DB_PASSWORD, 
